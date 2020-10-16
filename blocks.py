@@ -113,7 +113,7 @@ def bottleneck_block(bottom, num_out_channels, block_name):
 def bottom_layer(lf8, bottleneck, hgid, num_channels):
     lf8_connect = bottleneck(lf8, num_channels, str(hgid) + '_lf8')
     x = bottleneck(lf8, num_channels, str(hgid) + '_lf8_x1')
-    x = bottleneck(x, num_channels, str(hgid) + '_lf8_x2')          # Fixed issue #1
+    x = bottleneck(x, num_channels, str(hgid) + '_lf8_x2')          #  Fixed issue #1
     x = bottleneck(x, num_channels, str(hgid) + '_lf8_x3')
 
     rf8 = Add()([x, lf8_connect])
